@@ -16,7 +16,7 @@ public class Day1Puzzle1Test {
     @Test
     public void testOneValue() {
         Integer[] input = {
-            123
+                123
         };
         assertThat(runDay1(input)).isEqualTo(0);
     }
@@ -24,21 +24,21 @@ public class Day1Puzzle1Test {
     @Test
     public void testValuesFromDoc() {
         Integer[] input = {
-            199,
-            200,
-            208,
-            210,
-            200,
-            207,
-            240,
-            269,
-            260,
-            263
+                199,
+                200,
+                208,
+                210,
+                200,
+                207,
+                240,
+                269,
+                260,
+                263
         };
         assertThat(runDay1(input)).isEqualTo(7);
     }
 
     private Integer runDay1(Integer... inputValues) {
-        return Day1Puzzle1.countDepthMeasurementIncreases(asList(inputValues));
+        return new Day1Puzzle1().solvePuzzle(asList(inputValues));
     }
 }

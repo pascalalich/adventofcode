@@ -16,7 +16,7 @@ public class Day1Puzzle2Test {
     @Test
     public void testOneValue() {
         Integer[] input = {
-            123
+                123
         };
         assertThat(runDay1(input)).isEqualTo(0);
     }
@@ -24,7 +24,7 @@ public class Day1Puzzle2Test {
     @Test
     public void testThreeValues() {
         Integer[] input = {
-            123, 130, 129
+                123, 130, 129
         };
         assertThat(runDay1(input)).isEqualTo(0);
     }
@@ -32,7 +32,7 @@ public class Day1Puzzle2Test {
     @Test
     public void testFourValuesIncrease() {
         Integer[] input = {
-            123, 130, 129, 125
+                123, 130, 129, 125
         };
         assertThat(runDay1(input)).isEqualTo(1);
     }
@@ -40,7 +40,7 @@ public class Day1Puzzle2Test {
     @Test
     public void testFourValuesDecrease() {
         Integer[] input = {
-            123, 130, 129, 122
+                123, 130, 129, 122
         };
         assertThat(runDay1(input)).isEqualTo(0);
     }
@@ -48,21 +48,21 @@ public class Day1Puzzle2Test {
     @Test
     public void testValuesFromDoc() {
         Integer[] input = {
-            199,
-            200,
-            208,
-            210,
-            200,
-            207,
-            240,
-            269,
-            260,
-            263
+                199,
+                200,
+                208,
+                210,
+                200,
+                207,
+                240,
+                269,
+                260,
+                263
         };
         assertThat(runDay1(input)).isEqualTo(5);
     }
 
     private Integer runDay1(Integer... inputValues) {
-        return Day1Puzzle2.countDepthMeasurementIncreases(asList(inputValues));
+        return new Day1Puzzle2().solvePuzzle(asList(inputValues));
     }
 }
