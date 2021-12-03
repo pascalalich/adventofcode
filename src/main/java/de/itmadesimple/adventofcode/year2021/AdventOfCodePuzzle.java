@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 
@@ -21,11 +22,11 @@ public abstract class AdventOfCodePuzzle<T> {
 
     private List<T> loadInputFromFile(Path inputPath) throws IOException {
         return Files.lines(inputPath)
-                .map(this::parse)
+                .map(parseFunction())
                 .filter(Objects::nonNull)
                 .collect(toList());
     }
 
-    protected abstract T parse(String line);
+    protected abstract Function<String, T> parseFunction();
 
 }

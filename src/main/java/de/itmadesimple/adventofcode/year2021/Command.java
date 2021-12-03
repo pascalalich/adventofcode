@@ -23,4 +23,14 @@ public class Command {
         DOWN,
         UP
     }
+
+    public static Command parse(String line) {
+        if (line.equals("")) {
+            return null;
+        }
+        String[] parts = line.split("\\s");
+        Direction direction = Direction.valueOf(parts[0].toUpperCase());
+        Integer distance = Integer.parseInt(parts[1]);
+        return new Command(direction, distance);
+    }
 }

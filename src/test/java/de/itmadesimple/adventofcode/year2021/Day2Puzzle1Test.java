@@ -55,6 +55,6 @@ public class Day2Puzzle1Test {
 
     private Integer runDay2(String... inputValues) {
         Day2Puzzle1 puzzle = new Day2Puzzle1();
-        return puzzle.solvePuzzle(Arrays.stream(inputValues).map(puzzle::parse).collect(toList()));
+        return puzzle.solvePuzzle(Arrays.stream(inputValues).map(Command::parse).collect(toList()));
     }
 }

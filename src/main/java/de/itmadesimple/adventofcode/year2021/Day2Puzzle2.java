@@ -3,6 +3,7 @@ package de.itmadesimple.adventofcode.year2021;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.function.Function;
 
 public class Day2Puzzle2 extends AdventOfCodePuzzle<Command> {
 
@@ -28,14 +29,8 @@ public class Day2Puzzle2 extends AdventOfCodePuzzle<Command> {
     }
 
     @Override
-    protected Command parse(String line) {
-        if (line.equals("")) {
-            return null;
-        }
-        String[] parts = line.split("\\s");
-        Command.Direction direction = Command.Direction.valueOf(parts[0].toUpperCase());
-        Integer distance = Integer.parseInt(parts[1]);
-        return new Command(direction, distance);
+    protected Function<String, Command> parseFunction() {
+        return Command::parse;
     }
 
     public static void main(String[] args) throws IOException {

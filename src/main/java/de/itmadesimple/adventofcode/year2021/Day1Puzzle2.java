@@ -3,6 +3,7 @@ package de.itmadesimple.adventofcode.year2021;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.function.Function;
 
 public class Day1Puzzle2 extends AdventOfCodePuzzle<Integer> {
 
@@ -22,8 +23,8 @@ public class Day1Puzzle2 extends AdventOfCodePuzzle<Integer> {
     }
 
     @Override
-    protected Integer parse(String line) {
-        return Integer.parseInt(line);
+    protected Function<String, Integer> parseFunction() {
+        return Integer::parseInt;
     }
 
     public static void main(String[] args) throws IOException {
