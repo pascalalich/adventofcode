@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 
 import static java.util.stream.Collectors.toList;
 
@@ -19,7 +20,10 @@ public abstract class AdventOfCodePuzzle<T> {
     abstract Integer solvePuzzle(List<T> inputValues);
 
     private List<T> loadInputFromFile(Path inputPath) throws IOException {
-        return Files.lines(inputPath).map(this::parse).collect(toList());
+        return Files.lines(inputPath)
+                .map(this::parse)
+                .filter(Objects::nonNull)
+                .collect(toList());
     }
 
     protected abstract T parse(String line);
